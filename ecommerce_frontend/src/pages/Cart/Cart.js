@@ -1,3 +1,4 @@
+// src/pages/Cart.js
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeItem, clearCart } from '../redux/cartSlice';
@@ -7,7 +8,7 @@ const Cart = () => {
   const cartItems = useSelector(state => state.cart.items);
 
   const handleRemoveItem = (item) => {
-    dispatch(removeItem(item));
+    dispatch(removeItem(item.id)); // Asumimos que se usa el id del item
   };
 
   const handleClearCart = () => {
@@ -25,7 +26,7 @@ const Cart = () => {
           <ul>
             {cartItems.map(item => (
               <li key={item.id}>
-                <span>{item.name}</span>
+                <span>{item.name} - {item.price}</span> {/* Mostrar precio también */}
                 <button onClick={() => handleRemoveItem(item)}>Remove</button>
               </li>
             ))}

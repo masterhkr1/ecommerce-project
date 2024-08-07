@@ -6,7 +6,7 @@ import Home from './pages/Home';
 import About from './components/About';
 import Contact from './components/Contact';
 import Products from './pages/Products';
-import Cart from './components/Cart';
+import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 
 const App = () => {
